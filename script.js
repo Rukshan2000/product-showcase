@@ -86,14 +86,14 @@
      function viewProduct(product) {
          document.getElementById('modalProductName').textContent = product.name;
          document.getElementById('modalProductDescription').textContent = product.description;
-         document.getElementById('modalProductPrice').textContent = `$${product.price}`;
+         document.getElementById('modalProductPrice').textContent = `LKR ${product.price}`;
          document.getElementById('productModal').classList.remove('hidden');
 
          // Update total price based on quantity input
          document.getElementById('quantity').oninput = function() {
              const quantity = parseInt(this.value, 10);
              const totalPrice = quantity * product.price;
-             document.getElementById('modalTotalPrice').textContent = `Total: $${totalPrice}`;
+             document.getElementById('modalTotalPrice').textContent = `Total: LKR ${totalPrice}`;
          };
 
          // Handle increase and decrease buttons
