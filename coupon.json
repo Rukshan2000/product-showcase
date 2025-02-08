@@ -19,5 +19,19 @@
         "contactNo": "712198324",
         "salesCount": 0,
         "revenue": "LKR 0"
+    },
+    {
+        "couponCode": "R4io",
+        "name": "sample sample",
+        "contactNo": "sample",
+        "salesCount": 2,
+        "revenue": "LKR 1000"
+    },
+    {
+        "couponCode": "wt7g",
+        "name": "sample sample",
+        "contactNo": "sample",
+        "salesCount": 1,
+        "revenue": "LKR 500"
     }
 ]
