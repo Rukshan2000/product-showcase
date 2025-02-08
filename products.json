@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Chocolate Cake",
+        "category": "category1",
+        "price": 25,
+        "description": "A rich and moist chocolate cake topped with smooth chocolate frosting.",
+        "image": "assets/chocolate_cake.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Vanilla Sponge Cake",
+        "category": "category2",
+        "price": 20,
+        "description": "Light and fluffy vanilla sponge cake with a creamy filling.",
+        "image": "assets/vanilla_sponge_cake.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Red Velvet Cake",
+        "category": "category1",
+        "price": 35,
+        "description": "A soft red velvet cake with cream cheese frosting.",
+        "image": "assets/red_velvet_cake.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Carrot Cake",
+        "category": "category3",
+        "price": 30,
+        "description": "A moist carrot cake with walnuts and cream cheese frosting.",
+        "image": "assets/carrot_cake.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Lemon Drizzle Cake",
+        "category": "category2",
+        "price": 28,
+        "description": "A tangy lemon cake with a sweet lemon drizzle topping.",
+        "image": "assets/lemon_drizzle_cake.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Strawberry Shortcake",
+        "category": "category1",
+        "price": 40,
+        "description": "A delightful shortcake with fresh strawberries and whipped cream.",
+        "image": "assets/strawberry_shortcake.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Cheesecake",
+        "category": "category3",
+        "price": 45,
+        "description": "A creamy cheesecake with a graham cracker crust.",
+        "image": "assets/cheesecake.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Mango Mousse Cake",
+        "category": "category1",
+        "price": 38,
+        "description": "A delicious mango mousse layered on a soft sponge cake.",
+        "image": "assets/mango_mousse_cake.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Tiramisu Cake",
+        "category": "category2",
+        "price": 42,
+        "description": "A coffee-flavored tiramisu cake with a light mascarpone filling.",
+        "image": "assets/tiramisu_cake.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Chocolate Fudge Cake",
+        "category": "category3",
+        "price": 50,
+        "description": "A rich chocolate cake with a thick chocolate fudge frosting.",
+        "image": "assets/chocolate_fudge_cake.jpg"
+    }
+]

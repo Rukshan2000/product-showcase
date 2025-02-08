@@ -1,0 +1,13 @@
+{
+    "categories": [
+        { "id": "category1", "name": "Electronics" },
+        { "id": "category2", "name": "Fashion" },
+        { "id": "category3", "name": "Home Appliances" }
+    ],
+    "priceRanges": [
+        { "id": "0-50", "range": "$0 - $50" },
+        { "id": "50-100", "range": "$50 - $100" },
+        { "id": "100-200", "range": "$100 - $200" },
+        { "id": "200+", "range": "$200+" }
+    ]
+}
