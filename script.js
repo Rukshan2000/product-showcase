@@ -18,7 +18,7 @@
      request.onsuccess = function(event) {
          db = event.target.result;
          loadProducts(products);
-         loadCategories(products);  // Load categories dynamically
+         populateFilters(products);  // Load categories dynamically
      };
 
      request.onerror = function(event) {
@@ -54,9 +54,12 @@
       // Function to fetch and populate the filters
       async function populateFilters() {
         try {
-            // Fetch the categories and price ranges data from the external JSON file
             const response = await fetch('categories.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             const data = await response.json();
+            console.log(data);  // Log the data to see if it's correct
             
             // Populate Category Filter
             const categoryFilter = document.getElementById("categoryFilter");
@@ -66,7 +69,7 @@
                 option.textContent = category.name;
                 categoryFilter.appendChild(option);
             });
-
+    
             // Populate Price Range Filter
             const priceFilter = document.getElementById("priceFilter");
             data.priceRanges.forEach(priceRange => {
@@ -79,6 +82,7 @@
             console.error('Error fetching categories.json:', error);
         }
     }
+    
 
     // Call the function on page load
     window.onload = populateFilters;
