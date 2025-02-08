@@ -4,34 +4,39 @@
         "name": "Dilmi Omaya",
         "contactNo": "762944691",
         "salesCount": 0,
-        "revenue": "LKR 0"
+        "revenue": "LKR 0",
+        "withdrawal": "LKR 0"
     },
     {
         "couponCode": "UK2T",
         "name": "Rashini sathsarani",
         "contactNo": "772900641",
         "salesCount": 0,
-        "revenue": "LKR 0"
+        "revenue": "LKR 0",
+        "withdrawal": "LKR 0"
     },
     {
         "couponCode": "iwj0",
         "name": "gayashan withana",
         "contactNo": "712198324",
         "salesCount": 0,
-        "revenue": "LKR 0"
+        "revenue": "LKR 0",
+        "withdrawal": "LKR 0"
     },
     {
         "couponCode": "R4io",
         "name": "sample sample",
         "contactNo": "sample",
         "salesCount": 2,
-        "revenue": "LKR 1000"
+        "revenue": "LKR 1000",
+        "withdrawal": "LKR 0"
     },
     {
         "couponCode": "wt7g",
         "name": "sample sample",
         "contactNo": "sample",
         "salesCount": 3,
-        "revenue": "LKR 1500"
+        "revenue": "LKR 1500",
+        "withdrawal": "LKR 0"
     }
 ]

@@ -10,25 +10,25 @@
 
     <!-- Dashboard Header -->
     <div class="max-w-7xl mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold text-gray-800 text-center">Coupon Dashboard</h1>
+        <h1 class="text-3xl font-bold text-gray-800">Coupon Dashboard</h1>
     </div>
 
     <!-- Search bar -->
     <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-center mb-4">
-            <input type="text" id="search" placeholder="Search by coupon code" class="p-2 border border-gray-300 rounded-lg w-full max-w-md">
+        <div class="flex justify-between mb-4">
+            <input type="text" id="search" placeholder="Search by coupon code" class="p-2 border border-gray-300 rounded-lg w-full">
         </div>
     </div>
 
     <!-- Table -->
     <div class="max-w-7xl mx-auto px-4">
         <div class="overflow-x-auto">
-            <table class="table-auto w-full bg-white rounded-lg shadow-lg text-center">
+            <table class="table-auto w-full bg-white rounded-lg shadow-lg">
                 <thead class="bg-gray-800 text-white">
                     <tr>
                         <th class="px-4 py-2">Coupon Code</th>
                         <th class="px-4 py-2">Sales Count</th>
-                        <th class="px-4 py-2">Revenue</th>
+                        <th class="px-4 py-2">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="couponTable" class="bg-gray-100 text-gray-800">
@@ -38,15 +38,27 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex justify-center items-center">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full">
+            <h2 class="text-2xl font-bold mb-4" id="modalTitle">Coupon Details</h2>
+            <p id="modalDetails"></p>
+            <button id="closeModal" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
+        </div>
+    </div>
+
     <script>
         // Fetching data from coupons.json
         const searchInput = document.getElementById('search');
         const tableBody = document.getElementById('couponTable');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDetails = document.getElementById('modalDetails');
+        const closeModal = document.getElementById('closeModal');
 
         fetch('coupon.json')
             .then(response => response.json())
             .then(data => {
-                // Store the full data for search filtering
                 let coupons = data;
                 displayData(coupons);
 
@@ -63,15 +75,41 @@
         function displayData(coupons) {
             tableBody.innerHTML = '';
             coupons.forEach(coupon => {
+                // Assuming balance is derived from salesCount * 500 (example)
+                const balance = coupon.salesCount * 500;
+                const withdrawn = coupon.withdrawnAmount || 0;
+
                 tableBody.innerHTML += `
                     <tr class="border-b border-gray-200">
                         <td class="px-4 py-2">${coupon.couponCode}</td>
                         <td class="px-4 py-2">${coupon.salesCount}</td>
                         <td class="px-4 py-2">${coupon.revenue}</td>
+                        <td class="px-4 py-2">LKR ${balance - withdrawn}</td>
+                        <td class="px-4 py-2">
+                            <button class="px-2 py-1 bg-blue-500 text-white rounded" onclick="viewDetails('${coupon.couponCode}', '${coupon.name}', '${coupon.contactNo}', ${coupon.salesCount}, '${coupon.revenue}', ${balance}, ${withdrawn})">View</button>
+                        </td>
                     </tr>
                 `;
             });
         }
+
+        // Function to show modal with details including balance and withdrawn amount
+        function viewDetails(couponCode, name, contactNo, salesCount, revenue, balance, withdrawn) {
+            modal.classList.remove('hidden');
+            modalTitle.innerText = `Coupon: ${couponCode}`;
+            modalDetails.innerHTML = `
+                <strong>Sales Count:</strong> ${salesCount} <br>
+                <strong>Revenue:</strong> ${revenue} <br>
+                <strong>Total Balance:</strong> LKR ${balance} <br>
+                <strong>Withdrawn Amount:</strong> LKR ${withdrawn} <br>
+                <strong>Remaining Balance:</strong> LKR ${balance - withdrawn}
+            `;
+        }
+
+        // Close modal event
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
     </script>
 
 </body>
