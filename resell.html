@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Dashboard Header -->
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <h1 class="text-3xl font-bold text-gray-800 text-center">Coupon Dashboard</h1>
+    </div>
+
+    <!-- Search bar -->
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-center mb-4">
+            <input type="text" id="search" placeholder="Search by coupon code" class="p-2 border border-gray-300 rounded-lg w-full max-w-md">
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="overflow-x-auto">
+            <table class="table-auto w-full bg-white rounded-lg shadow-lg text-center">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="px-4 py-2">Coupon Code</th>
+                        <th class="px-4 py-2">Sales Count</th>
+                        <th class="px-4 py-2">Revenue</th>
+                    </tr>
+                </thead>
+                <tbody id="couponTable" class="bg-gray-100 text-gray-800">
+                    <!-- Data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Fetching data from coupons.json
+        const searchInput = document.getElementById('search');
+        const tableBody = document.getElementById('couponTable');
+
+        fetch('coupon.json')
+            .then(response => response.json())
+            .then(data => {
+                // Store the full data for search filtering
+                let coupons = data;
+                displayData(coupons);
+
+                // Search functionality
+                searchInput.addEventListener('input', () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const filteredCoupons = coupons.filter(coupon =>
+                        coupon.couponCode.toLowerCase().includes(searchTerm)
+                    );
+                    displayData(filteredCoupons);
+                });
+            });
+
+        function displayData(coupons) {
+            tableBody.innerHTML = '';
+            coupons.forEach(coupon => {
+                tableBody.innerHTML += `
+                    <tr class="border-b border-gray-200">
+                        <td class="px-4 py-2">${coupon.couponCode}</td>
+                        <td class="px-4 py-2">${coupon.salesCount}</td>
+                        <td class="px-4 py-2">${coupon.revenue}</td>
+                    </tr>
+                `;
+            });
+        }
+    </script>
+
+</body>
+</html>
