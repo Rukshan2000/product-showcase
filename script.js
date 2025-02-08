@@ -334,7 +334,7 @@
                     return `${item.name} - LKR ${item.price} x ${item.qty}`;
                 }).join('%0A');
 
-                const whatsappUrl = `https://wa.me/+94779054385?text=Order Details:%0A${message}%0A%0ATotal: $${total}`;
+                const whatsappUrl = `https://wa.me/+94779054385?text=Order Details:%0A${message}%0A%0ATotal: LKR ${total}`;
                 window.open(whatsappUrl, '_blank');
             };
 
