@@ -36,7 +36,7 @@
                  <img src="${product.image}" alt="${product.name}" class="w-full h-56 object-cover rounded">
                  <h3 class="text-lg font-semibold">${product.name}</h3>
                  <p class="text-gray-700">${product.description}</p>
-                 <p class="text-lg font-bold">$${product.price}</p>
+                 <p class="text-lg font-bold">LKR${product.price}</p>
                  <button type="button" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" id="viewButton-${product.id}">
                      View
                  </button>
@@ -167,7 +167,7 @@
                  <img src="${product.image}" alt="${product.name}" class="w-full h-56 object-cover rounded">
                  <h3 class="text-lg font-semibold">${product.name}</h3>
                  <p class="text-gray-700">${product.description}</p>
-                 <p class="text-lg font-bold">$${product.price}</p>
+                 <p class="text-lg font-bold">LKR${product.price}</p>
                  <button type="button" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" id="viewButton-${product.id}">
                      View
                  </button>
@@ -238,7 +238,7 @@
                         cartItem.innerHTML = `
                             <div>
                                 <h3 class="text-xl font-semibold text-gray-800">${item.name}</h3>
-                                <p class="text-gray-600">Price: $${item.price}</p>
+                                <p class="text-gray-600">Price: LKR${item.price}</p>
                             </div>
                             <div class="flex items-center justify-between space-x-4">
                                 <div class="flex items-center space-x-2">
@@ -256,7 +256,7 @@
                         total += item.price * item.qty;
                     });
 
-                    cartTotal.innerHTML = `<p class="font-semibold">Total: $${total}</p>`;
+                    cartTotal.innerHTML = `<p class="font-semibold">Total: LKR${total}</p>`;
                 }
             };
 
@@ -327,7 +327,7 @@
                 let total = 0;
                 const message = items.map(item => {
                     total += item.price * item.qty;
-                    return `${item.name} - $${item.price} x ${item.qty}`;
+                    return `${item.name} - LKR${item.price} x ${item.qty}`;
                 }).join('%0A');
 
                 const whatsappUrl = `https://wa.me/+94779054385?text=Order Details:%0A${message}%0A%0ATotal: $${total}`;
