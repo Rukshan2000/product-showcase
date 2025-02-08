@@ -1,10 +1,8 @@
 {
     "categories": [
-        { "id": "category1", "name": "Electronics" },
-        { "id": "category2", "name": "Fashion" },
-        { "id": "category3", "name": "Home Appliances" },
-        { "id": "category4", "name": "Home " }
-
+        { "id": "category1", "name": "Cakes" },
+        { "id": "category2", "name": "Pastries" },
+        { "id": "category3", "name": "Specialty Desserts" }
     ],
     "priceRanges": [
         { "id": "0-50", "range": "$0 - $50" },
