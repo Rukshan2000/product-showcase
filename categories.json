@@ -5,9 +5,9 @@
         { "id": "category3", "name": "Specialty Desserts" }
     ],
     "priceRanges": [
-        { "id": "0-50", "range": "$0 - $50" },
-        { "id": "50-100", "range": "$50 - $100" },
-        { "id": "100-200", "range": "$100 - $200" },
-        { "id": "200+", "range": "$200+" }
+        { "id": "0-50", "range": "0 - LKR 50" },
+        { "id": "50-100", "range": "LKR 50 - LKR 100" },
+        { "id": "100-200", "range": "LKR 100 - LKR 200" },
+        { "id": "200+", "range": "LKR 200+" }
     ]
 }
