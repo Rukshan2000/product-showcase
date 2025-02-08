@@ -2,7 +2,9 @@
     "categories": [
         { "id": "category1", "name": "Electronics" },
         { "id": "category2", "name": "Fashion" },
-        { "id": "category3", "name": "Home Appliances" }
+        { "id": "category3", "name": "Home Appliances" },
+        { "id": "category4", "name": "Home " }
+
     ],
     "priceRanges": [
         { "id": "0-50", "range": "$0 - $50" },
