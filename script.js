@@ -247,7 +247,7 @@
                                     <button onclick="increaseQty(${item.id})" class="px-3 py-1 bg-gray-200 rounded-full text-gray-700 hover:bg-gray-300">+</button>
                                 </div>
                                 <div>
-                                    <p class="text-lg font-bold text-gray-800">Total: $${item.price * item.qty}</p>
+                                    <p class="text-lg font-bold text-gray-800">Total: LKR ${item.price * item.qty}</p>
                                     <button onclick="removeItem(${item.id})" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Remove</button>
                                 </div>
                             </div>
